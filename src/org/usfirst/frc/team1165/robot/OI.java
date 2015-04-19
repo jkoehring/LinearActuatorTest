@@ -3,7 +3,6 @@ package org.usfirst.frc.team1165.robot;
 import org.usfirst.frc.team1165.robot.commands.SetLinearActuatorSetpoint;
 
 import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**

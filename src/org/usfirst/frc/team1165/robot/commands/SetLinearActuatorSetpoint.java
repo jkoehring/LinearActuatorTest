@@ -40,6 +40,9 @@ public class SetLinearActuatorSetpoint extends Command
 		
 		Robot.linearActuator.enable();
 		Robot.linearActuator.setSetpoint(setpoint);
+		
+		Robot.linearActuatorSensor.resetMinMax();
+		Robot.linearActuator.resetMaxSpeed();
 	}
 
 	// Called repeatedly when this Command is scheduled to run

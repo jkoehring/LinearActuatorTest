@@ -1,7 +1,6 @@
 package org.usfirst.frc.team1165.robot.commands;
 
 import org.usfirst.frc.team1165.robot.Robot;
-import org.usfirst.frc.team1165.robot.subsystems.LinearActuatorSensor;
 
 import edu.wpi.first.wpilibj.command.Command;
 

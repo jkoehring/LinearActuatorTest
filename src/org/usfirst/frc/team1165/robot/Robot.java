@@ -6,7 +6,6 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
-import org.usfirst.frc.team1165.robot.subsystems.LinearActuator;
 import org.usfirst.frc.team1165.robot.subsystems.LinearActuatorPID;
 import org.usfirst.frc.team1165.robot.subsystems.LinearActuatorSensor;
 
@@ -20,8 +19,8 @@ import org.usfirst.frc.team1165.robot.subsystems.LinearActuatorSensor;
 public class Robot extends IterativeRobot {
 
 	//public static final LinearActuator linearActuator = new LinearActuator();
-	public static final LinearActuatorPID linearActuator = new LinearActuatorPID();
 	public static final LinearActuatorSensor linearActuatorSensor = new LinearActuatorSensor();
+	public static final LinearActuatorPID linearActuator = new LinearActuatorPID();
 	public static OI oi;
 
     Command autonomousCommand;

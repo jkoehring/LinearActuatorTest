@@ -25,7 +25,10 @@ public class RobotMap
     public static final int linearActuatorSensorPort		= 0;
     
     public static final String linearActuatorSpeedKey		= "Linear Actuator Speed";
+    public static final String linearActuatorSpeedMaxKey	= "Linear Actuator Speed Max";
     public static final String linearActuatorSensorKey		= "Linear Actuator Sensor";
+    public static final String linearActuatorSensorMinKey	= "Linear Actuator Sensor Min";
+    public static final String linearActuatorSensorMaxKey	= "Linear Actuator Sensor Max";
     public static final String linearActuatorSetpointKey	= "Linear Actuator Setpoint";
 
 }

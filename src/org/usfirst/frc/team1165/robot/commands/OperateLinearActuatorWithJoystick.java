@@ -5,7 +5,7 @@ import org.usfirst.frc.team1165.robot.Robot;
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
- *
+ * Operates the linear actuator using input from a joystick
  */
 public class OperateLinearActuatorWithJoystick extends Command
 {
@@ -26,6 +26,9 @@ public class OperateLinearActuatorWithJoystick extends Command
 	protected void execute()
 	{
 		double speed = Robot.oi.getActuatorSpeed();
+		
+		// Treat a zone around the center position as zero to prevent fluctuating
+		// motor speeds when the joystick is at rest in the center position.
 		Robot.linearActuator.setSpeed(Math.abs(speed) >= .1 ? speed : 0);
 	}
 

@@ -8,30 +8,29 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
- *
+ * Provides current position of linear actuator using an AnalogPotentiometer.
  */
 public class LinearActuatorSensor extends Subsystem
 {
 	private AnalogPotentiometer pot;
 	
-	private final double scale = 12.0;		// the scale to apply to (multiply) the value returned by the POT
+	// When applied to the analog potentiometer, the scale
+	// and offset get us a range of from 0 to 6 inches.
+	private final double scale = 12.75;
+	private final double offset = -0.02;
 	
+	// Keep track of min and max positions: 
 	private double minPosition;
 	private double maxPosition;
-
-	// Put methods for controlling this subsystem
-	// here. Call these from Commands.
 	
 	public LinearActuatorSensor()
 	{
-		pot = new AnalogPotentiometer(RobotMap.linearActuatorSensorPort, scale);
+		pot = new AnalogPotentiometer(RobotMap.linearActuatorSensorPort, scale, offset);
 		resetMinMax();
 	}
 
 	public void initDefaultCommand()
 	{
-		// Set the default command for a subsystem here.
-		// setDefaultCommand(new MySpecialCommand());
 		setDefaultCommand(new ReportLinearActuatorPosition());
 	}
 	

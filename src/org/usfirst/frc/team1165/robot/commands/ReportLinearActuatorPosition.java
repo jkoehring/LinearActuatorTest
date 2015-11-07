@@ -5,7 +5,7 @@ import org.usfirst.frc.team1165.robot.Robot;
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
- *
+ * Reports the current position of the Linear Actuator on the SmartDashboard.
  */
 public class ReportLinearActuatorPosition extends Command
 {

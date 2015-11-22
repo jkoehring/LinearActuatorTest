@@ -50,7 +50,7 @@ public class SetLinearActuatorSetpoint extends Command
 		
 		// Reset some statistics:
 		Robot.linearActuatorSensor.resetMinMax();
-		Robot.linearActuator.resetMaxSpeed();
+		Robot.linearActuator.resetSpeeds();
 		
 		// Set the set point in the PID controller then enable it:
 		Robot.linearActuator.setSetpoint(setpoint);

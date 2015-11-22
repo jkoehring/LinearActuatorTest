@@ -26,6 +26,7 @@ public class RobotMap
     
     public static final String linearActuatorSpeedKey		= "Linear Actuator Speed";
     public static final String linearActuatorSpeedMaxKey	= "Linear Actuator Speed Max";
+    public static final String linearActuatorSpeedMinKey	= "Linear Actuator Speed Min";
     public static final String linearActuatorSensorKey		= "Linear Actuator Sensor";
     public static final String linearActuatorSensorMinKey	= "Linear Actuator Sensor Min";
     public static final String linearActuatorSensorMaxKey	= "Linear Actuator Sensor Max";

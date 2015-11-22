@@ -32,8 +32,9 @@ public class LinearActuatorPID extends PIDSubsystem
 	// Tolerance for reaching set point:
 	private final static double tolerance = 0.1;
 	
-	// Keeps track of maximum speed set by the PID controller.
+	// Keeps track of maximum and minimum speed set by the PID controller.
 	private double maxSetSpeed;
+	private double minSetSpeed = Double.MAX_VALUE;
 
 	// Constructor.
 	public LinearActuatorPID()
@@ -66,9 +67,10 @@ public class LinearActuatorPID extends PIDSubsystem
 		setDefaultCommand(new OperateLinearActuatorWithJoystick());
 	}
 	
-	public void resetMaxSpeed()
+	public void resetSpeeds()
 	{
 		maxSetSpeed = 0;
+		minSetSpeed = Double.MAX_VALUE;
 	}
 
 	/**
@@ -95,7 +97,12 @@ public class LinearActuatorPID extends PIDSubsystem
 		{
 			maxSetSpeed = speed;
 		}
+		if (Math.abs(speed) > 0 && Math.abs(speed) < Math.abs(minSetSpeed))
+		{
+			minSetSpeed = speed;
+		}
 		SmartDashboard.putNumber(RobotMap.linearActuatorSpeedMaxKey, maxSetSpeed);
+		SmartDashboard.putNumber(RobotMap.linearActuatorSpeedMinKey, minSetSpeed);
 	}
 	
 	/**

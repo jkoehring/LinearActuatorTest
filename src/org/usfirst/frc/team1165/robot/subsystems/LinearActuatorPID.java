@@ -3,9 +3,9 @@ package org.usfirst.frc.team1165.robot.subsystems;
 import org.usfirst.frc.team1165.robot.Robot;
 import org.usfirst.frc.team1165.robot.RobotMap;
 import org.usfirst.frc.team1165.robot.commands.OperateLinearActuatorWithJoystick;
+import org.usfirst.frc.team1165.wpilibj.command.PIDSubsystem;
 
 import edu.wpi.first.wpilibj.CANTalon;
-import edu.wpi.first.wpilibj.command.PIDSubsystem;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
@@ -42,10 +42,11 @@ public class LinearActuatorPID extends PIDSubsystem
 		// Set the parameters of the PID controller:
 		super(kP, kI, kD);
 		
-		// Set ranges of PID controller:
-        setAbsoluteTolerance(tolerance);
         setInputRange(minPosition, maxPosition);
         setOutputRange(minSpeed, maxSpeed);
+		// Set ranges of PID controller:
+		//setPercentTolerance(10);
+        setAbsoluteTolerance(tolerance);
 		
         // Construct the motor that drives the actuator.
 		motor = new CANTalon(RobotMap.linearActuatorMotorChannel);

@@ -1,5 +1,6 @@
 package org.usfirst.frc.team1165.robot.subsystems;
 
+import org.usfirst.frc.team1165.robot.Robot;
 import org.usfirst.frc.team1165.robot.RobotMap;
 import org.usfirst.frc.team1165.robot.commands.ReportLinearActuatorPosition;
 
@@ -63,6 +64,10 @@ public class LinearActuatorSensor extends Subsystem
 			SmartDashboard.putNumber(RobotMap.linearActuatorSensorKey, position);
 			SmartDashboard.putNumber(RobotMap.linearActuatorSensorMinKey, minPosition);
 			SmartDashboard.putNumber(RobotMap.linearActuatorSensorMaxKey, maxPosition);
+			
+			SmartDashboard.putNumber("Error", Robot.linearActuator.getPIDController().getError());
+			SmartDashboard.putNumber("Average Error", Robot.linearActuator.getPIDController().getAvgError());
+			SmartDashboard.putBoolean("On Target", Robot.linearActuator.onTarget());
 		}
 	}
 }

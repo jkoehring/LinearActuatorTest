@@ -16,9 +16,9 @@ public class LinearActuatorSensor extends Subsystem
 	private AnalogPotentiometer pot;
 	
 	// When applied to the analog potentiometer, the scale
-	// and offset get us a range of from 0 to 6 inches.
-	private final double scale = 12.75;
-	private final double offset = -0.02;
+	// and offset get us a range of from 0 to 6.125 inches.
+	private final double scale = 13.65;
+	private final double offset = -0.87;
 	
 	// Keep track of min and max positions: 
 	private double minPosition;
